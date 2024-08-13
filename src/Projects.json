@@ -2,14 +2,14 @@
   {
     "id": 1,
     "image": "../Screenshot (27).png",
-    "description": "A web application that helps students calculate their CGPA based on grades and credit hours. The user inputs their grades, and the app automatically computes the GPA for each semester and the cumulative GPA.",
+    "description": "A web application that helps students calculate their CGPA based on grades and credit hours. The user inputs their grades, and the app automatically computes the cumulative GPA (CGPA) for any semester.",
     "demoLink": "https://maxzi3.github.io/Cgpa_checker/",
     "codeLink": "https://github.com/Maxzi3/Cgpa_checker"
   },
   {
     "id": 2,
     "image": "../Screenshot (25).png",
-    "description": "A sleek and modern business portfolio website designed to showcase company services, projects, and client testimonials. This responsive website is ideal for startups and small businesses looking to establish an online presence.",
+    "description": "A sleek and modern business portfolio website designed to showcase company services and goods. This responsive website is ideal for startups and small businesses looking to establish an online presence.",
     "demoLink": "https://spare-parts-ten.vercel.app/",
     "codeLink": "https://github.com/Maxzi3/Spare-parts"
   },

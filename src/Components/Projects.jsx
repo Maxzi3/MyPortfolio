@@ -3,15 +3,15 @@ import Project from "../Projects.json";
 
 const Projects = () => {
   return (
-    <div className="py-20 px-10">
-      <h1 className="text-center py-10 text-5xl font-bold text-textcolor1 underline underline-offset-8 uppercase">
+    <div name="projects" className="pt-32 pb-20 md:px-10">
+      <h1 className="text-center pb-20 text-5xl font-bold text-textcolor1 underline underline-offset-8 uppercase">
         Projects
       </h1>
-      <div className="flex md:flex-row flex-col gap-4 p-6 w-full">
+      <div className="flex md:flex-row flex-col gap-10 p-6 w-full">
         {Project.map((Projectt) => (
           <div
             key={Projectt.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 w-full md:w-1/2"
+            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 w-full md:w-1/2 lg:w-1/3"
           >
             <img
               className="h-48 w-full object-cover object-center"
@@ -45,6 +45,5 @@ const Projects = () => {
     </div>
   );
 };
-   
 
 export default Projects;

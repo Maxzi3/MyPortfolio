@@ -8,7 +8,10 @@ import { FaXTwitter } from "react-icons/fa6";
 const Hero = () => {
   return (
     <>
-      <section className="flex md:flex-row flex-col  gap-10 items-center mx-auto w-10/12 md:my20 my-32">
+      <section
+        name="home"
+        className="flex md:flex-row flex-col gap-10 items-center mx-auto w-10/12 md:py-32  py-24 min-h-screen"
+      >
         <div>
           <p className="text-textcolor text-xl px-4">
             Hello, I'm{" "}
@@ -22,11 +25,13 @@ const Hero = () => {
               FRONTEND DEVELOPER
             </span>
           </h1>
-          <p className="md:w-9/12 w-full text-justify text-textcolor text-base px-4">
+          <p className="md:w-9/12 w-full text-left text-textcolor text-base px-4">
             A passionate and creative frontend developer with a knack for
             bringing ideas to life on the web. With a solid foundation in{" "}
-            <span className="text-textcolor1 font-bold">HTML, CSS&TailwindCSS, JavaScript and ReactJs.</span> I
-            specialize in crafting responsive and visually appealing websites
+            <span className="text-textcolor1 font-bold">
+              HTML, CSS&TailwindCSS, JavaScript and ReactJs.
+            </span>{" "}
+            I specialize in crafting responsive and visually appealing websites
             that offer a seamless user experience.
           </p>
           <button className="text-textcolor bg-button border-0 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mx-4 my-2 ">
@@ -37,25 +42,33 @@ const Hero = () => {
           <img src="..\PFP.jpg" alt="PFP" className="rounded-full w-full" />
           <div className="absolute inset-x-0  flex justify-center gap-8 transform translate-y-1/2 text-textcolor1 ">
             <a
-              href=""
+              href="https://www.instagram.com/officially_maxzi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xl transform -translate-y-1/2 hover:text-textcolorh2"
             >
               <FaInstagram />
             </a>
             <a
-              href=""
+              href="https://x.com/crypto_Maxzi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xl transform -translate-y-1/4 hover:text-textcolorh2"
             >
               <FaXTwitter />
             </a>
             <a
-              href=""
+              href="https://web.facebook.com/obisike.maxwell.9"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xl transform -translate-y-1/4 hover:text-textcolorh2"
             >
               <FaFacebookF />
             </a>
             <a
-              href=""
+              href="https://github.com/Maxzi3"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xl transform -translate-y-1/2 hover:text-textcolorh2"
             >
               <FaGithub />

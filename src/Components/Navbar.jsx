@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  FaBars,
-  FaTimes,
-  FaArrowRight,
-  FaGithub,
-  FaInstagram,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,35 +31,91 @@ const Navbar = () => {
           </div>
 
           {/* Mobile View menu links  */}
-          <ul
+          <nav
             className={`absolute md:hidden top-0 left-0 h-screen w-full bg-bgcolor flex flex-col items-center justify-center text-base cursor-pointer list-none gap-10 transition-transform duration-300 ease-in-out ${
               isOpen ? "transform translate-x-0" : "transform -translate-x-full"
             }`}
           >
-            <li>
-              <a className="text-3xl hover:text-textcolorh2">Home</a>
-            </li>
-            <li>
-              <a className="text-3xl hover:text-textcolorh2">About</a>
-            </li>
-            <li>
-              <a className="text-3xl hover:text-textcolorh2">Projects</a>
-            </li>
-            <li>
-              <a className="text-3xl hover:text-textcolorh2">Contact</a>
-            </li>
+            <Link
+              onClick={toggleMenu}
+              to="home"
+              smooth={true}
+              duration={500}
+              className="mr-5 text-3xl hover:text-textcolorh2"
+            >
+              Home
+            </Link>
+
+            <Link
+              onClick={toggleMenu}
+              to="About"
+              smooth={true}
+              duration={500}
+              className="mr-5 text-3xl hover:text-textcolorh2"
+            >
+              About
+            </Link>
+
+            <Link
+              onClick={toggleMenu}
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="mr-5 text-3xl hover:text-textcolorh2"
+            >
+              Projects
+            </Link>
+
+            <Link
+              onClick={toggleMenu}
+              to="Contact"
+              smooth={true}
+              duration={500}
+              className="mr-5 text-3xl hover:text-textcolorh2"
+            >
+              Contact
+            </Link>
+
             <button className="inline-flex items-center text-textcolor bg-button border-0 py-1 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mt-4 md:mt-0">
               Hire Me
               <FaArrowRight className=" text-sm ml-1" />
             </button>
-          </ul>
+          </nav>
 
           {/* Desktop view menu */}
           <nav className="hidden md:flex md:ml-auto items-center text-base justify-center cursor-pointer">
-            <a className="mr-5 hover:text-textcolorh2">Home</a>
-            <a className="mr-5 hover:text-textcolorh2">About</a>
-            <a className="mr-5 hover:text-textcolorh2">Projects</a>
-            <a className="mr-5 hover:text-textcolorh2">Contact</a>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              className="mr-5 hover:text-textcolorh2"
+            >
+              Home
+            </Link>
+            <Link
+              to="About"
+              smooth={true}
+              duration={500}
+              className="mr-5 hover:text-textcolorh2"
+            >
+              About
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="mr-5 hover:text-textcolorh2"
+            >
+              Projects
+            </Link>
+            <Link
+              to="Contact"
+              smooth={true}
+              duration={500}
+              className="mr-5 hover:text-textcolorh2"
+            >
+              Contact
+            </Link>
             <button className="inline-flex items-center text-textcolor bg-button border-0 py-1 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mt-4 md:mt-0">
               Hire Me
               <FaArrowRight className=" text-sm ml-1" />
