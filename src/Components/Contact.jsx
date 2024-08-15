@@ -60,6 +60,7 @@ const Contact = () => {
         message: "",
       });
       // Optionally, you can show a success message here
+      alert("FORM SUBMITTED")
       console.log("Form submitted successfully");
     } else {
       // Handle errors here
