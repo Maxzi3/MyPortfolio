@@ -1,6 +1,25 @@
 import React from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { motion } from "framer-motion";
+const aninmatelist = (delay) => ({
+  initial: { x: -100, opacity: 0 },
+  whileInView: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: delay },
+  },
+  viewport: { once: true },
+});
+const aninmatelist2 = (delay) => ({
+  initial: { x: 100, opacity: 0 },
+  whileInView: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: delay },
+  },
+  viewport: { once: true },
+});
 
 const Contact = () => {
   return (
@@ -12,7 +31,12 @@ const Contact = () => {
         // Submit the form below or reach me via any contact detail.
       </p>
       <div className="flex flex-col md:flex-row items-center justify-between w-10/12 mx-auto gap-8">
-        <div className="flex flex-col justify-around md:h-auto w-full md:w-1/2 bg-bgcolor text-textcolor1 p-6 rounded-lg">
+        <motion.div
+          variants={aninmatelist(0.2)}
+          initial="initial"
+          whileInView="whileInView"
+          className="flex flex-col justify-around md:h-auto w-full md:w-1/2 bg-bgcolor text-textcolor1 p-6 rounded-lg"
+        >
           <h1 className="text-center text-2xl py-4 font-bold">
             CONTACT DETAILS
           </h1>
@@ -37,8 +61,11 @@ const Contact = () => {
               <p>Lagos, Nigeria</p>
             </div>
           </div>
-        </div>
-        <form
+        </motion.div>
+        <motion.form
+          variants={aninmatelist2(0.5)}
+          initial="initial"
+          whileInView="whileInView"
           action="https://getform.io/f/arolroob"
           method="POST"
           className="flex flex-col md:w-1/2 w-full"
@@ -66,7 +93,7 @@ const Contact = () => {
           >
             Let's Collaborate
           </button>
-        </form>
+        </motion.form>
       </div>
     </div>
   );

@@ -13,11 +13,9 @@ const Navbar = () => {
     <div>
       <header className="text-textcolor1 body-font bg-bgcolor fixed top-0 w-full z-50">
         <div className="container mx-auto flex p-5 flex-row items-center justify-between">
-          <a className="flex title-font font-medium items-center">
-            <span className="ml-3 text-2xl font-bold hover:text-textcolorh2 cursor-pointer">
-              Portfolio
-            </span>
-          </a>
+          <h1 className="md:ml-12 ml-3 text-2xl font-bold hover:text-textcolorh2 cursor-pointer">
+            Portfolio
+          </h1>
 
           {/* Mobile View button  */}
           <div className="md:hidden z-50">
@@ -116,10 +114,15 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <button className="inline-flex items-center text-textcolor bg-button border-0 py-1 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mt-4 md:mt-0">
+            <a
+              href="https://wa.me/2349026575211"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-textcolor bg-button border-0 py-1 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mt-4 md:mt-0"
+            >
               Hire Me
               <FaArrowRight className=" text-sm ml-1" />
-            </button>
+            </a>
           </nav>
         </div>
       </header>
