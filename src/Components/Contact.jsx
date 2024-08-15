@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -22,6 +22,51 @@ const aninmatelist2 = (delay) => ({
 });
 
 const Contact = () => {
+  // Step 1: Set up state for form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Step 2: Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    // Submit the form data to your Getform endpoint
+    const response = await fetch("https://getform.io/f/arolroob", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    // Check if the form submission was successful
+    if (response.ok) {
+      // Clear the form inputs
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      // Optionally, you can show a success message here
+      console.log("Form submitted successfully");
+    } else {
+      // Handle errors here
+      console.error("Form submission failed");
+    }
+  };
+
   return (
     <div name="Contact" className="md:min-h-screen min-h-screen py-16">
       <h1 className="underline text-4xl text-textcolor1 text-center font-bold py-8">
@@ -66,13 +111,14 @@ const Contact = () => {
           variants={aninmatelist2(0.5)}
           initial="initial"
           whileInView="whileInView"
-          action="https://getform.io/f/arolroob"
-          method="POST"
+          onSubmit={handleSubmit} // Step 2: Attach the custom submit handler
           className="flex flex-col md:w-1/2 w-full"
         >
           <input
             type="text"
             name="name"
+            value={formData.name}
+            onChange={handleChange} // Track changes to the input
             placeholder="Your Name"
             className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
           />
@@ -80,11 +126,15 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange} // Track changes to the input
             className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
           />
           <textarea
             name="message"
             placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange} // Track changes to the input
             className="border border-gray-300 outline-none p-3 w-full h-48 rounded-md text-textcolor1"
           />
           <button
