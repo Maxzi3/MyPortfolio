@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
+
 const aninmatelist = (delay) => ({
   initial: { x: -100, opacity: 0 },
   whileInView: {
@@ -11,6 +12,7 @@ const aninmatelist = (delay) => ({
   },
   viewport: { once: true },
 });
+
 const aninmatelist2 = (delay) => ({
   initial: { y: 200, opacity: 0 },
   whileInView: {
@@ -22,14 +24,15 @@ const aninmatelist2 = (delay) => ({
 });
 
 const Contact = () => {
-  // Step 1: Set up state for form inputs
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Handle input change
+  // Step 1: Track form submission success
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -38,11 +41,9 @@ const Contact = () => {
     }));
   };
 
-  // Step 2: Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
 
-    // Submit the form data to your Getform endpoint
     const response = await fetch("https://getform.io/f/arolroob", {
       method: "POST",
       headers: {
@@ -51,19 +52,15 @@ const Contact = () => {
       body: new URLSearchParams(formData).toString(),
     });
 
-    // Check if the form submission was successful
     if (response.ok) {
-      // Clear the form inputs
       setFormData({
         name: "",
         email: "",
         message: "",
       });
-      // Optionally, you can show a success message here
-      alert("FORM SUBMITTED")
+      setIsSubmitted(true); // Update submission state to true
       console.log("Form submitted successfully");
     } else {
-      // Handle errors here
       console.error("Form submission failed");
     }
   };
@@ -112,38 +109,44 @@ const Contact = () => {
           variants={aninmatelist2(0.5)}
           initial="initial"
           whileInView="whileInView"
-          onSubmit={handleSubmit} // Step 2: Attach the custom submit handler
+          onSubmit={handleSubmit}
           className="flex flex-col md:w-1/2 w-full"
         >
           <input
             type="text"
             name="name"
             value={formData.name}
-            onChange={handleChange} // Track changes to the input
+            onChange={handleChange}
             placeholder="Your Name"
             className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
           />
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
             value={formData.email}
-            onChange={handleChange} // Track changes to the input
+            onChange={handleChange}
+            placeholder="Your Email"
             className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
           />
           <textarea
             name="message"
-            placeholder="Your Message"
             value={formData.message}
-            onChange={handleChange} // Track changes to the input
+            onChange={handleChange}
+            placeholder="Your Message"
             className="border border-gray-300 outline-none p-3 w-full h-48 rounded-md text-textcolor1"
           />
-          <button
-            type="submit"
-            className="mx-auto text-textcolor1 border-2 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor rounded text-base mt-4"
-          >
-            Let's Collaborate
-          </button>
+          <div className="flex items-center justify-center mt-4">
+            <button
+              type="submit"
+              className="text-textcolor1 border-2 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor rounded text-base"
+            >
+              Let's Collaborate
+            </button>
+            {/* Conditionally render success message */}
+            {isSubmitted && (
+              <p className="ml-4 text-green-500 text-xl">Submitted!</p>
+            )}
+          </div>
         </motion.form>
       </div>
     </div>
