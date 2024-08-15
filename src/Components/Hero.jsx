@@ -33,7 +33,7 @@ const Hero = () => {
             className="text-textcolor text-xl px-4"
           >
             Hello, I'm{" "}
-            <span className="text-textcolor1 text-2xl font-bold ">
+            <span className="text-textcolor1 md:text-2xl text-xl font-bold ">
               OBISIKE MAXWELL
             </span>
           </motion.p>
