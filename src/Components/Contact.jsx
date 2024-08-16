@@ -30,8 +30,8 @@ const Contact = () => {
     message: "",
   });
 
-  // Step 1: Track form submission success
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState(""); // State to track validation errors
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,10 +39,17 @@ const Contact = () => {
       ...prevData,
       [name]: value,
     }));
+    setError(""); // Clear error message on input change
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if all fields are filled
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("All fields are required.");
+      return;
+    }
 
     const response = await fetch("https://getform.io/f/arolroob", {
       method: "POST",
@@ -58,8 +65,8 @@ const Contact = () => {
         email: "",
         message: "",
       });
-      setIsSubmitted(true); // Update submission state to true
-      console.log("Form submitted successfully");
+      setIsSubmitted(true);
+      setError(""); // Clear error on successful submission
     } else {
       console.error("Form submission failed");
     }
@@ -142,11 +149,11 @@ const Contact = () => {
             >
               Let's Collaborate
             </button>
-            {/* Conditionally render success message */}
             {isSubmitted && (
               <p className="ml-4 text-green-500 text-xl">Submitted!</p>
             )}
           </div>
+          {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
         </motion.form>
       </div>
     </div>
