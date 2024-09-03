@@ -113,9 +113,9 @@ const Contact = () => {
           </div>
         </motion.div>
         <motion.form
-          variants={aninmatelist2(0.5)}
-          initial="initial"
-          whileInView="whileInView"
+          // variants={aninmatelist2(0.5)}
+          // initial="initial"
+          // whileInView="whileInView"
           onSubmit={handleSubmit}
           className="flex flex-col md:w-1/2 w-full"
         >
