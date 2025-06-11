@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-scroll";
 
@@ -14,7 +14,7 @@ const Navbar = () => {
       <header className="text-textcolor1 body-font bg-bgcolor fixed top-0 w-full z-50">
         <div className="container mx-auto flex p-5 flex-row items-center justify-between">
           <h1 className="md:ml-12 ml-3 text-2xl font-bold hover:text-textcolorh2 cursor-pointer">
-            Portfolio
+            DevMaxzi
           </h1>
 
           {/* Mobile View button  */}

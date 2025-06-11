@@ -1,4 +1,3 @@
-import React from "react";
 import Project from "../Projects.json";
 
 const Projects = () => {
@@ -7,7 +6,7 @@ const Projects = () => {
       <h1 className="text-center pb-20 text-5xl font-bold text-textcolor1 underline underline-offset-8 uppercase">
         Projects
       </h1>
-      <div className="flex md:flex-row flex-col gap-10 p-6 w-full">
+      <div className="flex md:flex-row flex-col gap-8 p-6 w-full">
         {Project.map((Projectt) => (
           <div
             key={Projectt.id}
@@ -16,7 +15,7 @@ const Projects = () => {
             <img
               className="h-48 w-full object-cover object-center"
               src={Projectt.image}
-              alt={Projectt.description}
+              alt={Projectt.id}
             />
             <div className="p-6">
               <h2 className="text-lg font-bold text-gray-800 mb-3">

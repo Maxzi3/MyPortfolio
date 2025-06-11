@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -7,16 +7,6 @@ const aninmatelist = (delay) => ({
   initial: { x: -100, opacity: 0 },
   whileInView: {
     x: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: delay },
-  },
-  viewport: { once: true },
-});
-
-const aninmatelist2 = (delay) => ({
-  initial: { y: 200, opacity: 0 },
-  whileInView: {
-    y: 0,
     opacity: 1,
     transition: { duration: 0.5, delay: delay },
   },
@@ -78,7 +68,7 @@ const Contact = () => {
         Contact
       </h1>
       <p className="text-base text-textcolor1 text-center md:w-full w-72 mx-auto pb-8">
-        // Submit the form below or reach me via any contact detail.
+        Submit the form below or reach me via any contact detail.
       </p>
       <div className="flex flex-col md:flex-row items-center justify-between w-10/12 mx-auto gap-8">
         <motion.div
@@ -147,7 +137,7 @@ const Contact = () => {
               type="submit"
               className="text-textcolor1 border-2 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor rounded text-base"
             >
-              Let's Collaborate
+              Let&apos;s Collaborate
             </button>
             {isSubmitted && (
               <p className="ml-4 text-green-500 text-xl">Submitted!</p>

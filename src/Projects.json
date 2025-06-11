@@ -8,16 +8,16 @@
   },
   {
     "id": 2,
-    "image": "../Screenshot (25).png",
-    "description": "A sleek and modern business portfolio website designed to showcase company services and goods. This responsive website is ideal for startups and small businesses looking to establish an online presence.",
-    "demoLink": "https://spare-parts-ten.vercel.app/",
-    "codeLink": "https://github.com/Maxzi3/Spare-parts"
+    "image": "../Screenshot (53).png",
+    "description": "Inkwell is a MERN fullstack blogging platform. It allows users to create, edit, and manage blog posts, with features like authentication, likes, comments, and real-time updates.",
+    "demoLink": "https://inkwell-blog-ggbs.onrender.com",
+    "codeLink": "https://github.com/Maxzi3/inkwell"
   },
   {
     "id": 3,
-    "image": "../Screenshot (26).png",
-    "description": "A real estate listing platform specifically designed for ESUT lodges. This site allows users to browse, search, and view details of available lodges, complete with images, location, and contact information.",
-    "demoLink": "https://esut-homes-sigma.vercel.app/",
-    "codeLink": "https://github.com/Maxzi3/Esut-Homes"
+    "image": "../Screenshot (52).png",
+    "description": "Shopnix is a MERN fullstack eCommerce platform focused on men’s fashion. it features product listings, cart functionality, checkout flow, and user authentication.",
+    "demoLink": "https://shopnix.onrender.com/",
+    "codeLink": "https://github.com/Maxzi3/Shopnix"
   }
 ]
