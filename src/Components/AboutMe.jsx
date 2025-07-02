@@ -1,65 +1,83 @@
 import { motion } from "framer-motion";
-const aninmatelist = (delay) => ({
+
+const animateIn = (delay) => ({
   initial: { y: 100, opacity: 0 },
   whileInView: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { duration: 0.6, delay },
   },
-  viewport: { once: true }, // This ensures the animation only plays once when the element is in view
+  viewport: { once: true },
 });
 
 const AboutMe = () => {
   return (
-    <div className="relative md:h-screen min-h-screen ">
-      <h1
-        name="About"
-        className="pt-24 text-4xl text-center underline text-textcolor1 font-bold"
-      >
+    <section
+      id="about"
+      className="px-4 py-16 my-12 "
+    >
+      {/* Heading */}
+      <h1 className="mb-2 text-4xl font-bold text-center underline md:text-5xl text-textcolor1 underline-offset-8">
         About Me
       </h1>
-      <div className="md:w-7/12 w-full mx-auto text-center text-textcolor">
-        <motion.p
-          variants={aninmatelist(0.2)}
-          initial="initial"
-          whileInView="whileInView"
-          className="p-4 text-lg md:text-xl leading-8 md:leading-10"
-        >
-          I&apos;m Maxwell, a Frontend Developer specialized in building modern,
-          fullstack web applications using{" "}
-          <span className="text-textcolor1 font-bold">
-            TypeScript, React, and Tailwind CSS
+
+      {/* Paragraph Section */}
+      <motion.div
+        {...animateIn(0.2)}
+        className="max-w-4xl mx-auto text-lg leading-8 text-center text-textcolor md:text-xl md:leading-10"
+      >
+        <p className="px-4">
+          I&apos;m <span className="font-bold">Maxwell</span>, a Frontend
+          Developer specialized in building modern, fullstack web applications
+          using{" "}
+          <span className="font-bold text-textcolor1">
+            TypeScript, Nextjs, React, and Tailwind CSS
           </span>
-          . I focus on developing fast, responsive, and scalable user interfaces
+          . I focus on creating fast, responsive, and scalable user interfaces
           that integrate seamlessly with backend services using{" "}
-          <span className="text-textcolor1 font-bold">
+          <span className="font-bold text-textcolor1">
             Redux Toolkit, REST APIs, and React Query
           </span>
-          . My goal is to deliver exceptional user experiences while writing
-          clean, maintainable, and high-quality code. I enjoy solving real-world
-          problems and continuously improving my skills to build products that
-          create real impact.
-        </motion.p>
-      </div>
-      <div className="flex md:flex-row items-center justify-center gap-2 pt-5 mb-20 text-textcolor">
+          . I enjoy solving real-world problems and building products that make
+          real impact.
+        </p>
+      </motion.div>
+
+      {/* Tech Logos */}
+      <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
+        {/* JavaScript */}
         <motion.div
-          variants={aninmatelist(0.5)}
-          initial="initial"
-          whileInView="whileInView"
+          {...animateIn(0.4)}
+          className="flex flex-col items-center w-24"
         >
-          <img src="../Jslogo.png" alt="" className="w-32 " />
-          <p className="text-center text-base">Javascript</p>
+          <img
+            src="../Jslogo.png"
+            alt="JavaScript Logo"
+            className="object-contain w-20 h-20"
+          />
+          <p className="mt-2 text-sm text-center md:text-base text-textcolor">
+            JavaScript
+          </p>
         </motion.div>
+
+        {/* ReactJS */}
         <motion.div
-          variants={aninmatelist(0.5)}
-          initial="initial"
-          whileInView="whileInView"
+          {...animateIn(0.5)}
+          className="flex flex-col items-center w-24"
         >
-          <img src="../reactlogo.png" alt="" className="w-32  " />
-          <p className="text-center text-lg pt-4">ReactJS</p>
+          <img
+            src="../reactlogo.png"
+            alt="React Logo"
+            className="object-contain w-20 h-20"
+          />
+          <p className="mt-2 text-sm text-center md:text-base text-textcolor">
+            ReactJS
+          </p>
         </motion.div>
+
+        {/* Add more logos if needed */}
       </div>
-    </div>
+    </section>
   );
 };
 

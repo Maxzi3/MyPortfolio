@@ -1,6 +1,5 @@
 import { FaGithub, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 const aninmatelist = (delay) => ({
@@ -14,22 +13,26 @@ const aninmatelist = (delay) => ({
 });
 
 const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <section
-        name="home"
-        className="flex md:flex-row flex-col gap-10 items-center mx-auto w-11/12 md:py-32  py-24 min-h-screen"
+        id="home"
+        className="flex flex-col items-center w-11/12 gap-10 py-24 mx-auto md:flex-row lg:py-32 lg:min-h-screen"
       >
         <div>
-          <p
-            className="text-textcolor text-xl px-4"
-          >
+          <p className="px-4 text-xl text-textcolor">
             Hello, I&apos;m{" "}
-            <span className="text-textcolor1 md:text-2xl text-xl font-bold ">
+            <span className="text-xl font-bold text-textcolor1 lg:text-2xl ">
               OBISIKE MAXWELL
             </span>
           </p>
-          <h1 className="text-textcolor text-xl p-4">
+          <h1 className="p-4 text-xl text-textcolor">
             A{" "}
             <TypeAnimation
               sequence={[
@@ -43,7 +46,7 @@ const Hero = () => {
               ]}
               wrapper="span"
               speed={50}
-              className="text-textcolor1 text-4xl font-extrabold"
+              className="text-4xl font-extrabold text-textcolor1"
               repeat={Infinity}
             />
           </h1>
@@ -51,27 +54,27 @@ const Hero = () => {
             variants={aninmatelist(0.5)}
             initial="initial"
             whileInView="whileInView"
-            className="md:w-9/12 w-full text-left text-textcolor text-base px-4 pb-8"
+            className="w-full px-4 pb-8 text-base text-left md:w-9/12 text-textcolor"
           >
             A passionate frontend developer who loves turning ideas into
             real-world web applications. With strong skills in{" "}
-            <span className="text-textcolor1 font-bold">
-              HTML, CSS, Tailwind CSS, JavaScript, TypeScript, and React
+            <span className="font-bold text-textcolor1">
+              HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Nextjs, and React .
             </span>
-            , I focus on building responsive, scalable, and user-friendly
+            {" "}I focus on building responsive, scalable, and user-friendly
             interfaces that deliver smooth user experiences across devices.
           </motion.p>
 
-          <Link
-            to="projects"
-            className="text-textcolor bg-button border-0 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor1 rounded text-base mx-4 my-2 "
+          <a
+            onClick={() => scrollToSection("project")}
+            className="px-3 py-2 mx-4 my-2 text-base border-0 rounded text-textcolor bg-button focus:outline-none hover:bg-buttonhover hover:text-textcolor1 "
           >
             View Works
-          </Link>
+          </a>
         </div>
         <div className="relative w-full">
-          <img src="../PFP.jpg" alt="PFP" className="rounded-full w-full" />
-          <div className="absolute inset-x-0  flex justify-center gap-8 transform translate-y-1/2 text-textcolor1 ">
+          <img src="../PFP.jpg" alt="PFP" className="w-full rounded-full" />
+          <div className="absolute inset-x-0 flex justify-center gap-8 transform translate-y-1/2 text-textcolor1 ">
             <a
               href="https://www.linkedin.com/in/devmaxzi"
               target="_blank"

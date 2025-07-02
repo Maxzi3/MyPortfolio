@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { FaPhone, FaEnvelope } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaPhone, FaEnvelope, FaGithub } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaLocationDot,
+} from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { BsTwitterX } from "react-icons/bs";
 
-const aninmatelist = (delay) => ({
-  initial: { x: -100, opacity: 0 },
-  whileInView: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: delay },
-  },
+// Animation setup
+const animateFromLeft = (delay) => ({
+  initial: { x: -50, opacity: 0 },
+  whileInView: { x: 0, opacity: 1, transition: { delay, duration: 0.6 } },
   viewport: { once: true },
 });
 
@@ -19,23 +22,18 @@ const Contact = () => {
     email: "",
     message: "",
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState(""); // State to track validation errors
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    setError(""); // Clear error message on input change
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if all fields are filled
     if (!formData.name || !formData.email || !formData.message) {
       setError("All fields are required.");
       return;
@@ -43,110 +41,156 @@ const Contact = () => {
 
     const response = await fetch("https://getform.io/f/arolroob", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     });
 
     if (response.ok) {
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      setFormData({ name: "", email: "", message: "" });
       setIsSubmitted(true);
-      setError(""); // Clear error on successful submission
+      setError("");
     } else {
       console.error("Form submission failed");
     }
   };
 
   return (
-    <div name="Contact" className="md:min-h-screen min-h-screen py-16">
-      <h1 className="underline text-4xl text-textcolor1 text-center font-bold py-8">
+    <section
+      id="contact"
+      className="h-auto md:py-16 py-6 px-4 sm:px-6 lg:px-10"
+    >
+      {/* Title */}
+      <h1 className="text-center text-4xl md:text-5xl font-bold text-textcolor1 underline underline-offset-8 mb-4">
         Contact
       </h1>
-      <p className="text-base text-textcolor1 text-center md:w-full w-72 mx-auto pb-8">
-        Submit the form below or reach me via any contact detail.
+      <p className="text-center text-base text-gray-600 dark:text-gray-300 max-w-m mx-auto mb-10">
+        Submit the form below or reach out via any of the contact methods.
       </p>
-      <div className="flex flex-col md:flex-row items-center justify-between w-10/12 mx-auto gap-8">
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Contact Info */}
+
         <motion.div
-          variants={aninmatelist(0.2)}
-          initial="initial"
-          whileInView="whileInView"
-          className="flex flex-col justify-around md:h-auto w-full md:w-1/2 bg-bgcolor text-textcolor1 p-6 rounded-lg"
+          {...animateFromLeft(0.2)}
+          className="bg-bgcolor text-textcolor1 rounded-xl p-6 shadow-md flex flex-col gap-6"
         >
-          <h1 className="text-center text-2xl py-4 font-bold">
-            CONTACT DETAILS
-          </h1>
-          <div className="flex gap-4 items-center pb-4">
-            <FaEnvelope className="text-3xl" />
+          <h2 className="text-xl font-semibold text-center">CONTACT DETAILS</h2>
+
+          <div className="flex items-start gap-4">
+            <FaEnvelope className="text-2xl mt-1" />
             <div>
-              <h1>Email</h1>
-              <p className="text-sm">obisikemaxwell@gmail.com</p>
+              <p className="font-medium">Email</p>
+              <p className="text-sm text-gray-200">obisikemaxwell@gmail.com</p>
             </div>
           </div>
-          <div className="flex gap-4 items-center pb-4">
-            <FaPhone className="text-3xl" />
+
+          <div className="flex items-start gap-4">
+            <FaPhone className="text-2xl mt-1" />
             <div>
-              <h1>Phone</h1>
-              <p>+2349026575211</p>
+              <p className="font-medium">Phone</p>
+              <p className="text-sm text-gray-200">+2349026575211</p>
             </div>
           </div>
-          <div className="flex gap-4 items-center">
-            <FaLocationDot className="text-3xl" />
+
+          <div className="flex items-start gap-4">
+            <FaLocationDot className="text-2xl mt-1" />
             <div>
-              <h1>Address</h1>
-              <p>Lagos, Nigeria</p>
+              <p className="font-medium">Address</p>
+              <p className="text-sm text-gray-200">Lagos, Nigeria</p>
+            </div>
+          </div>
+          <div>
+            <h1>Follow Us</h1>
+            <div className="flex flex-row gap-4 py-4">
+              <a
+                href="https://github.com/Maxzi3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="hover:text-textcolorh2  text-xl" />
+              </a>
+              <a
+                href="https://www.instagram.com/dev_maxzi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="hover:text-textcolorh2 text-xl" />
+              </a>
+              <a
+                href="https://web.facebook.com/obisike.maxwell.9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="hover:text-textcolorh2 text-xl" />
+              </a>
+              <a
+                href="https://x.com/dev_maxzi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsTwitterX className="hover:text-textcolorh2 text-xl" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/devmaxzi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="hover:text-textcolorh2 text-xl" />
+              </a>
             </div>
           </div>
         </motion.div>
+
+        {/* Contact Form */}
         <motion.form
-          // variants={aninmatelist2(0.5)}
-          // initial="initial"
-          // whileInView="whileInView"
           onSubmit={handleSubmit}
-          className="flex flex-col md:w-1/2 w-full"
+          className=" rounded-xl p-6 shadow-md flex flex-col gap-4"
         >
           <input
-            type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
+            className="p-3 rounded-md border bg-transparent text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+
           <input
-            type="email"
             name="email"
+            type="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
-            className="border border-gray-300 outline-none p-3 w-full mb-4 rounded-md text-textcolor1"
+            className="p-3 rounded-md border bg-transparent text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Your Message"
-            className="border border-gray-300 outline-none p-3 w-full h-48 rounded-md text-textcolor1"
+            rows={6}
+            className="p-3 rounded-md border bg-transparent  placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
-          <div className="flex items-center justify-center mt-4">
-            <button
-              type="submit"
-              className="text-textcolor1 border-2 py-2 px-3 focus:outline-none hover:bg-buttonhover hover:text-textcolor rounded text-base"
-            >
-              Let&apos;s Collaborate
-            </button>
-            {isSubmitted && (
-              <p className="ml-4 text-green-500 text-xl">Submitted!</p>
-            )}
-          </div>
-          {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="bg-bgcolor text-white font-medium py-2 px-4 rounded-md hover:bg-buttonhover transition"
+          >
+            Let’s Collaborate
+          </button>
+
+          {/* Submission Feedback */}
+          {isSubmitted && (
+            <p className="text-green-600 text-sm mt-2">
+              Thank you! Message submitted.
+            </p>
+          )}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </motion.form>
       </div>
-    </div>
+    </section>
   );
 };
 
