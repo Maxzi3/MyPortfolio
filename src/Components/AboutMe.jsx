@@ -74,6 +74,19 @@ const AboutMe = () => {
             ReactJS
           </p>
         </motion.div>
+        <motion.div
+          {...animateIn(0.5)}
+          className="flex flex-col items-center w-24"
+        >
+          <img
+            src="../next-logo.png"
+            alt="React Logo"
+            className="object-contain w-20 h-20"
+          />
+          <p className="mt-2 text-sm text-center md:text-base text-textcolor">
+            NextJS
+          </p>
+        </motion.div>
 
         {/* Add more logos if needed */}
       </div>

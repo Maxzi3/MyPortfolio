@@ -1,10 +1,10 @@
 [
-  {
+    {
     "id": 1,
-    "image": "../Screenshot (27).png",
-    "description": "A web application that helps students calculate their CGPA based on grades and credit hours. The user inputs their grades, and the app automatically computes the cumulative GPA (CGPA) for any semester.",
-    "demoLink": "https://maxzi3.github.io/Cgpa_checker/",
-    "codeLink": "https://github.com/Maxzi3/Cgpa_checker"
+    "image": "../Screenshot (86).png",
+    "description": "Medify is an AI-powered health assistant. It lets users describe their symptoms in plain language, analyzes them, and suggests possible conditions. It also recommends doctors for appointments and can handle prescriptions — bringing healthcare closer to you.",
+    "demoLink": "https://medify-devmaxzi.vercel.app/",
+    "codeLink": "https://github.com/Maxzi3/health_app"
   },
   {
     "id": 2,
@@ -19,5 +19,13 @@
     "description": "Shopnix is a MERN fullstack eCommerce platform focused on men’s fashion. it features product listings, cart functionality, checkout flow, and user authentication.",
     "demoLink": "https://shopnix.onrender.com/",
     "codeLink": "https://github.com/Maxzi3/Shopnix"
+  },
+    {
+    "id": 4,
+    "image": "../Screenshot (27).png",
+    "description": "A web application that helps students calculate their CGPA based on grades and credit hours. The user inputs their grades, and the app automatically computes the cumulative GPA (CGPA) for any semester.",
+    "demoLink": "https://maxzi3.github.io/Cgpa_checker/",
+    "codeLink": "https://github.com/Maxzi3/Cgpa_checker"
   }
+
 ]

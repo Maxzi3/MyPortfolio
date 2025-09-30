@@ -1,16 +1,16 @@
 import { FaGithub, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-const aninmatelist = (delay) => ({
-  initial: { x: -100, opacity: 0 },
-  whileInView: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: delay },
-  },
-  viewport: { once: true },
-});
+// const aninmatelist = (delay) => ({
+//   initial: { x: -100, opacity: 0 },
+//   whileInView: {
+//     x: 0,
+//     opacity: 1,
+//     transition: { duration: 0.5, delay: delay },
+//   },
+//   viewport: { once: true },
+// });
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -50,20 +50,16 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h1>
-          <motion.p
-            variants={aninmatelist(0.5)}
-            initial="initial"
-            whileInView="whileInView"
-            className="w-full px-4 pb-8 text-base text-left md:w-9/12 text-textcolor"
-          >
-            A passionate frontend developer who loves turning ideas into
-            real-world web applications. With strong skills in{" "}
+          <p className="w-full px-4 pb-8 text-base text-left md:w-9/12 text-textcolor">
+            A passionate Developer who loves turning ideas into real-world web
+            applications. With strong skills in{" "}
             <span className="font-bold text-textcolor1">
-              HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Nextjs, and React .
-            </span>
-            {" "}I focus on building responsive, scalable, and user-friendly
+              HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Nextjs, and React
+              .
+            </span>{" "}
+            I focus on building responsive, scalable, and user-friendly
             interfaces that deliver smooth user experiences across devices.
-          </motion.p>
+          </p>
 
           <a
             onClick={() => scrollToSection("project")}
