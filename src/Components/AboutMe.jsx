@@ -12,10 +12,7 @@ const animateIn = (delay) => ({
 
 const AboutMe = () => {
   return (
-    <section
-      id="about"
-      className="px-4 py-16 my-12 "
-    >
+    <section id="about" className="px-4 py-16 my-12 ">
       {/* Heading */}
       <h1 className="mb-2 text-4xl font-bold text-center underline md:text-5xl text-textcolor1 underline-offset-8">
         About Me
@@ -27,19 +24,14 @@ const AboutMe = () => {
         className="max-w-4xl mx-auto text-lg leading-8 text-center text-textcolor md:text-xl md:leading-10"
       >
         <p className="px-4">
-          I&apos;m <span className="font-bold">Maxwell</span>, a Frontend
-          Developer specialized in building modern, fullstack web applications
-          using{" "}
+          I&apos;m <span className="font-bold">Maxwell</span>, a Full-Stack
+          Developer building end-to-end web applications with{" "}
           <span className="font-bold text-textcolor1">
-            TypeScript, Nextjs, React, and Tailwind CSS
+            Next.js, React, TypeScript, Node.js, Express, and MongoDB
           </span>
-          . I focus on creating fast, responsive, and scalable user interfaces
-          that integrate seamlessly with backend services using{" "}
-          <span className="font-bold text-textcolor1">
-            Redux Toolkit, REST APIs, and React Query
-          </span>
-          . I enjoy solving real-world problems and building products that make
-          real impact.
+          . I handle everything from pixel-perfect UIs with Tailwind to secure
+          REST APIs, authentication flows, and database design. Currently
+          Improving My Backend Skills.
         </p>
       </motion.div>
 

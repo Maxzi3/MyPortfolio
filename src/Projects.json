@@ -7,25 +7,55 @@
     "codeLink": "https://github.com/Maxzi3/health_app"
   },
   {
-    "id": 2,
+  "id": 2,
+  "image": "../Screenshot (88).png",
+  "description": "Scanly is an automated security analysis tool that scans both GitHub repositories and live website URLs. It detects outdated dependencies, hardcoded secrets, SQL injection risks, insecure functions, API leaks, and Docker misconfigurations. It generates a clear security report with recommended fixes for developers.",
+  "demoLink": "https://scanly-devmaxzi.vercel.app/",
+  "codeLink": "https://github.com/Maxzi3/scanly"
+},
+ {
+  "id": 3,
+  "image": "../Screenshot (89).png",
+  "description": "A modern Web3 token presale landing page built with Next.js, TailwindCSS, and Framer Motion. It features an animated hero section, real-time countdown timer, tokenomics section, roadmap timeline, FAQ, and a clean responsive layout. The page is prepared for wallet connection and smart contract integration.",
+  "demoLink": "https://maxpresale.vercel.app/",
+  "codeLink": "https://github.com/Maxzi3/maxpresale"
+},
+  {
+    "id": 4,
     "image": "../Screenshot (53).png",
     "description": "Inkwell is a MERN fullstack blogging platform. It allows users to create, edit, and manage blog posts, with features like authentication, likes, comments, and real-time updates.",
     "demoLink": "https://inkwell-blog-ggbs.onrender.com",
     "codeLink": "https://github.com/Maxzi3/inkwell"
   },
   {
-    "id": 3,
+    "id": 5,
     "image": "../Screenshot (52).png",
     "description": "Shopnix is a MERN fullstack eCommerce platform focused on men’s fashion. it features product listings, cart functionality, checkout flow, and user authentication.",
     "demoLink": "https://shopnix.onrender.com/",
     "codeLink": "https://github.com/Maxzi3/Shopnix"
   },
     {
-    "id": 4,
+    "id": 6,
     "image": "../Screenshot (27).png",
     "description": "A web application that helps students calculate their CGPA based on grades and credit hours. The user inputs their grades, and the app automatically computes the cumulative GPA (CGPA) for any semester.",
     "demoLink": "https://maxzi3.github.io/Cgpa_checker/",
     "codeLink": "https://github.com/Maxzi3/Cgpa_checker"
+  },
+ 
+
+  {
+    "id": 7,
+    "image": "../Screenshot (25).png",
+    "description": "A sleek and modern business portfolio website designed to showcase company services and goods. This responsive website is ideal for startups and small businesses looking to establish an online presence.",
+    "demoLink": "https://spare-parts-ten.vercel.app/",
+    "codeLink": "https://github.com/Maxzi3/Spare-parts"
+  },
+  {
+    "id": 8,
+    "image": "../Screenshot (26).png",
+    "description": "A real estate listing platform specifically designed for ESUT lodges. This site allows users to browse, search, and view details of available lodges, complete with images, location, and contact information.",
+    "demoLink": "https://esut-homes-sigma.vercel.app/",
+    "codeLink": "https://github.com/Maxzi3/Esut-Homes"
   }
 
 ]

@@ -29,7 +29,7 @@ const Hero = () => {
           <p className="px-4 text-xl text-textcolor">
             Hello, I&apos;m{" "}
             <span className="text-xl font-bold text-textcolor1 lg:text-2xl ">
-              OBISIKE MAXWELL
+              MAXWELL
             </span>
           </p>
           <h1 className="p-4 text-xl text-textcolor">
@@ -37,7 +37,7 @@ const Hero = () => {
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                "FRONTEND DEVELOPER.",
+                "FULLSTACK DEVELOPER.",
                 1000,
                 "TECHNICAL WRITER.",
                 1000,
@@ -51,14 +51,12 @@ const Hero = () => {
             />
           </h1>
           <p className="w-full px-4 pb-8 text-base text-left md:w-9/12 text-textcolor">
-            A passionate Developer who loves turning ideas into real-world web
-            applications. With strong skills in{" "}
+            Full-stack developer shipping production-grade apps with{" "}
             <span className="font-bold text-textcolor1">
-              HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Nextjs, and React
-              .
-            </span>{" "}
-            I focus on building responsive, scalable, and user-friendly
-            interfaces that deliver smooth user experiences across devices.
+              Next.js, React, TypeScript, Node.js, Express, and MongoDB
+            </span>
+            . I build fast, responsive frontends and secure backends end-to-end
+            from authentication and APIs to real-time features and deployment.
           </p>
 
           <a
