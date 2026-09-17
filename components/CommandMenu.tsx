@@ -136,7 +136,7 @@ export default function CommandMenu() {
         aria-modal="true"
         aria-label="Command menu"
         onClick={(e) => e.stopPropagation()}
-        className="w-[90%] max-w-[440px] rounded-xl border border-line bg-[#111111] p-2 shadow-2xl"
+        className="w-[90%] max-w-110 rounded-xl border border-line bg-[#111111] p-2 shadow-2xl"
       >
         <input
           ref={inputRef}

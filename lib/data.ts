@@ -32,14 +32,14 @@ export const projects: Project[] = [
     tag: "AI healthcare assistant",
     description:
       "Symptom analyzer that lets users describe symptoms in plain language and get possible conditions, doctor recommendations, and support.",
-    href: "#",
+    href: "https://medify-devmaxzi.vercel.app/",
   },
   {
     name: "Scanly",
     tag: "Security scanner",
     description:
       "Automated security analysis tool that scans GitHub repos and live websites for vulnerabilities, secrets, and misconfigurations.",
-    href: "#",
+    href: "https://scanly-devmaxzi.vercel.app/",
   },
   {
     name: "Universal Loyalty Rewards",
