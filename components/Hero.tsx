@@ -17,7 +17,7 @@ export default function Hero() {
       />
 
       <h1
-        className="animate-fade-up mb-2.5 font-serif text-[clamp(38px,6vw,52px)] leading-[1.1] font-semibold tracking-[-0.02em]"
+        className="animate-fade-up mb-2.5 font-serif text-[clamp(38px,6vw,52px)] leading-[1.1] font-normal tracking-[-0.02em]"
         style={{
           animationDelay: "60ms",
           fontFamily: "Georgia, serif",
