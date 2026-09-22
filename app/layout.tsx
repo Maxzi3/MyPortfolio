@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Poppins } from "next/font/google";
 import { profile } from "@/lib/data";
 import "./globals.css";
 import CommandMenu from "@/components/CommandMenu";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -22,11 +22,14 @@ const siteUrl = "https://your-domain.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s — ${profile.name}`,
   },
+
   description: profile.bio,
+
   keywords: [
     "Maxwell",
     "Full-stack developer",
@@ -38,9 +41,14 @@ export const metadata: Metadata = {
     "Laravel",
     "Frontend developer Nigeria",
   ],
+
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
-  alternates: { canonical: siteUrl },
+
+  alternates: {
+    canonical: siteUrl,
+  },
+
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -56,18 +64,29 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.role}`,
     description: profile.bio,
     images: ["/og-image.png"],
   },
+
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
-  icons: { icon: "/icon.png", apple: "/apple-icon.png" },
+
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
+
   manifest: "/manifest.webmanifest",
 };
 
@@ -94,14 +113,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${instrumentSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
         />
+
         {children}
+
         <CommandMenu />
       </body>
     </html>

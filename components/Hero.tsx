@@ -15,9 +15,13 @@ export default function Hero() {
         className="animate-fade-up mb-6 rounded-full border border-line object-cover"
         style={{ animationDelay: "0ms" }}
       />
+
       <h1
-        className="animate-fade-up mb-2.5 text-[clamp(38px,6vw,52px)] leading-[1.1] font-semibold tracking-[-0.02em]"
-        style={{ animationDelay: "60ms" }}
+        className="animate-fade-up mb-2.5 font-serif text-[clamp(38px,6vw,52px)] leading-[1.1] font-semibold tracking-[-0.02em]"
+        style={{
+          animationDelay: "60ms",
+          fontFamily: "Georgia, serif",
+        }}
       >
         {profile.name}
       </h1>
@@ -45,8 +49,11 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-accent/20 ring-4 ring-accent/10" />
             <span className="relative inline-flex h-1.75 w-1.75 rounded-full bg-accent" />
           </span>
+
           {profile.availableLabel}
+
           <span className="text-faint">·</span>
+
           <LocalTime />
         </div>
       )}
